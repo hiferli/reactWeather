@@ -4,7 +4,7 @@ import { WeatherReducer } from './Reducer'
 const WeatherAppContext = React.createContext();
 
 const WeatherAppProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(WeatherAppContext, {
+    const [state, dispatch] = useReducer(WeatherReducer, {
         city: {
             "city": "Delhi",
             "lat": "28.6600",
