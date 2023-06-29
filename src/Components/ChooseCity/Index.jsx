@@ -33,7 +33,12 @@ const ChooseCity = () => {
 
 	const fetchData = () => {
 		axios(URL).then((data) => {
-			console.log(data)
+			// console.log(data)
+			let _daily = data.data.daily
+			dispatch({
+				type: 'SET_DAILY',
+				payload: _daily 
+			})
 		})
 	}
 
