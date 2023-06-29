@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import cities from '../../Data/IndianCities.json'
 
 import { UseWeatherAppContext } from '../../Context/Context'
+
+import axios from 'axios'
 
 const ChooseCity = () => {
 	console.log(`UseWeatherAppContext: ` , UseWeatherAppContext())
@@ -20,6 +22,25 @@ const ChooseCity = () => {
 			payload: selectedCity
 		})
 	}
+
+	// API Calls
+	const API_KEY = '9a12834df62bc3ebee87c993a0e4c95e';
+	let latitude = city && city.lat ? city.lat : ``;
+	let longitude = city && city.lng ? city.lng : ``;
+	let exclude = 'hourly,minutely';
+	const URL =  `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=${exclude}&units=metric&lang=tr&appid=${API_KEY}`
+    
+
+	const fetchData = () => {
+		axios(URL).then((data) => {
+			console.log(data)
+		})
+	}
+
+	useEffect(() => {
+		fetchData();
+		// eslint-disable-next-line
+	}, [city]);
 
   return (
     <div>
