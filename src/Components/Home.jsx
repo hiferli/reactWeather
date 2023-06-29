@@ -1,5 +1,6 @@
 import React from 'react'
 import ChooseCity from './ChooseCity/Index'
+import WeekInfo from './Weekly/WeekInfo'
 
 const Home = () => {
   return (
@@ -8,7 +9,7 @@ const Home = () => {
             <div className="weatherSection">
                 <div className="rightSegment">
                     <ChooseCity />
-                    2. Week Information
+                    <WeekInfo /> <br />
                     3. Humidity
                 </div>
             </div>
