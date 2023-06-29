@@ -6,7 +6,7 @@ import { UseWeatherAppContext } from '../../Context/Context'
 import axios from 'axios'
 
 const ChooseCity = () => {
-	console.log(`UseWeatherAppContext: ` , UseWeatherAppContext())
+	// console.log(`UseWeatherAppContext: ` , UseWeatherAppContext())
 
 	const {state: {city} , dispatch} = UseWeatherAppContext();
 	// console.log(city);
